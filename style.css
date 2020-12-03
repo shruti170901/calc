@@ -1,0 +1,220 @@
+$border-radius: 20px;
+
+$accent: #f9a100;
+$primary: #b2cebb;
+$base: #424242;
+$light-primary: rgba($primary, .3);
+$gray: #8c8c8c;
+$light-gray: rgba($gray, .2);
+$lighter-gray: rgba($gray, .1);
+$transition: .3s all ease;
+
+#app{
+  position: relative;
+  width: 450px;
+  height: 645px;
+  display: flex;
+  background: $primary;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: $border-radius;
+  box-shadow: 0px 7px 25px $light-gray;
+  transition: $transition;
+  .plants{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: 0px 7px 25px $light-gray;
+    .plant{
+      display: flex;
+      width: max-content;
+      border-radius: $border-radius;
+      transition: $transition;
+      padding: 10px;
+      margin: 20px 0;
+      &:hover{
+        box-shadow: 0px 7px 15px $light-gray;
+        img{
+          transform: rotate(25deg) scale(1.45);
+        }
+      }
+      img{
+        width: 100px;
+        height: auto;
+        border-radius: $border-radius;
+        transition: $transition;
+      }
+      .description{
+        width: 180px;
+        padding-left: 25px;
+        h4{
+          margin-top: 5px;
+        }
+        p{
+          color: $gray;
+        }
+        .price{
+          font-weight: 600;
+        }
+      }
+      .quantity{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 35px;
+        padding: 0 20px;
+        font-size: 18px;
+        background: $light-primary;
+        border-radius: $border-radius;
+        .btn{
+          border: none;
+          background: none;
+          color: $gray;
+          transition: $transition;
+          cursor: pointer;
+            &:hover{
+              transform: scale(1.45);
+          }
+        }
+        .number{
+          font-weight: 600;
+          animation: scale .3s ease;
+        }
+      }
+    }
+  }
+  
+  .checkout{
+    position: absolute;
+    top: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .total{
+      font-weight: 900;
+      display: flex;
+      align-items: flex-end;
+      font-size: 20px;
+      margin-bottom: 20px;
+      span{
+        font-size: 24px;
+        margin-left: 9px;
+      }
+    }
+    button{
+      font-size: 18px;
+      background: $accent;
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 100px;
+      border: none;
+      border-radius: $border-radius;
+      transition: $transition;
+      cursor: pointer;
+      &:hover{
+        box-shadow: 0px 7px 25px $light-gray;
+      }
+      &:disabled{
+        background-color:$gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+  .cart-checkout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+    margin-top: 20px;
+    .cart-plants{
+      display: flex;
+      height: 300px;
+    }
+    p{
+      font-size: 34px;
+      font-weight: 600;
+      text-align: center;
+      width: 240px;
+    }
+  }
+}
+*:focus{
+    outline-color: $accent;
+  }
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: $base;
+  background-image: linear-gradient(to right top, #fff, #c8e6c9);
+}
+
+.fade-up-leave-active {
+   transition: .6s all ease;
+}
+.fade-up-leave{
+  transform: translateY(0);
+}
+.fade-up-enter, .fade-up-leave-to {
+  transform: translateY(-500px);
+}
+
+.scale-enter-active {
+  transition: $transition;
+}
+.scale-leave-active {
+  transition: $transition;
+}
+.scale-enter, .scale-leave-to{
+  transform: scale(1.2);
+}
+
+.opacity-leave-active {
+   transition: $transition;
+}
+.opacity-enter, .opacity-leave-to {
+  transform: translateY(60px);
+  opacity: 0;
+}
+
+.plants-group-leave-active {
+   transition: $transition;
+}
+.plants-group-enter, .plants-group-leave-to {
+  transform: translateX(200px);
+  opacity: 0;
+}
+
+.order-group-enter-active {
+   transition: 2s all ease
+}
+.order-group-enter, .order-group-leave-to {
+  transform: translateX(-300px);
+  opacity: 0;
+}
+
+
+.fa-instagram{
+  position: absolute;
+  color: $primary;
+  top: 3%;
+  right: 2%;
+  font-size: 38px;
+}
+
+.fa-instagram:hover{
+  font-size: 42px;
+  color: $accent;
+  transition: all .1s linear;
+  cursor: pointer;
+}
